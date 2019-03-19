@@ -10,7 +10,10 @@ public class Vector {
 	 * Parameterless constructor
 	 */
 	public Vector () {
-		
+
+		this.x = 0f;
+		this.y = 0f;
+		this.z = 0f;
 	}
 	
 	/**
@@ -21,6 +24,16 @@ public class Vector {
 		this.x = x;
 		this.y = y;
 		this.z = z;
+	}
+
+	/**
+	 * Copy constructor
+	 * @param otherVector original vector.
+	 */
+	public Vector (Vector otherVector){
+		this.x = otherVector.x;
+		this.y = otherVector.y;
+		this.z = otherVector.z;
 	}
 
 	/**
@@ -69,7 +82,7 @@ public class Vector {
 	 * @return vector
 	 */
 	public String toString() {
-		return String.format("("+x+", "+y+", "+z+")");
+		return String.format("["+x+", "+y+", "+z+"]");
 	}
 
 }

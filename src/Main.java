@@ -25,13 +25,15 @@ public class Main {
 		
 		System.out.println("Welcome to the Ray tracer Project \n\n");
 		System.out.println("Vector1 = "+vec.toString());
-		System.out.println("Normalize Vector1 = " +math.normalize(vec));
+		System.out.println("Normalized Vector1 = " +math.normalize(vec));
 		
 		System.out.println("\n Vector2 = "+vec2.toString());
-		System.out.println("Normalize Vector2 = " +math.normalize(vec2));
+		System.out.println("Normalized Vector2 = " +math.normalize(vec2));
 		
 		System.out.println("\n"+vec.toString() +" dot "+ vec2.toString() +" = " +math.dotProd(vec, vec2) );
 		System.out.println(vec.toString() +" cross "+ vec2.toString() +" = " +math.crossProd(vec, vec2).toString() );
+		System.out.println(vec.toString() +" add "+ vec2.toString() +" = "+math.addVec(vec, vec2).toString());
+		System.out.println(vec.toString() +" sub "+ vec2.toString() +" = "+math.subVec(vec, vec2).toString());
 	}
 
 }
