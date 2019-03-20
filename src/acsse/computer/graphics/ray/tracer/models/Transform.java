@@ -34,4 +34,8 @@ public class Transform {
     public Vector scale (float scalar, Vector vec){
         return new Vector(scalar * vec.getX(), scalar * vec.getY(), scalar * vec.getZ() );
     }
+
+    public Vector negateVector ( Vector vector){
+        return new Vector(scale(-1, vector));
+    }
 }
