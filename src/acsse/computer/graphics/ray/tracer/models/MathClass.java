@@ -1,13 +1,11 @@
 package acsse.computer.graphics.ray.tracer.models;
 
-
+/**
+ * this class contains operations that can be performed on vectors.
+ * This operations include the dot product, cross product, add, substract, normalize.
+ */
 public class MathClass {
-	
-	/**
-	 * Constructor.
-	 */
-	public MathClass() {}
-	
+
 	
 	/**
 	 * Calculate the dot product of a vector.
@@ -15,7 +13,7 @@ public class MathClass {
 	 * @param vec2 -- vector 2
 	 * @return result of the dot product
 	 */
-	public final float dotProd(Vector vec1, Vector vec2) {
+	public static final float dotProd(Vector vec1, Vector vec2) {
 	
 		return vec1.getX() * vec2.getX() + vec1.getY()  * vec2.getY() + vec1.getZ() * vec2.getZ();
 		
@@ -27,7 +25,7 @@ public class MathClass {
 	 * @param vec2 --vector 2
 	 * @return resultant vector
 	 */
-	public final Vector crossProd(Vector vec1, Vector vec2) {
+	public static final Vector crossProd(Vector vec1, Vector vec2) {
 		
 		return new Vector ( vec1.getY() * vec2.getZ() - vec1.getZ() * vec2.getY(),
 							vec1.getZ() * vec2.getX() - vec1.getX() * vec2.getZ(), 
@@ -40,7 +38,7 @@ public class MathClass {
 	 * @param vector
 	 * @return the magnitude of the vector.
 	 */
-	public final float calcMagnitude(Vector vector) {
+	public static final float calcMagnitude(Vector vector) {
 		
 		return  (float) Math.sqrt(vector.getX() * vector.getX() + vector.getY() * vector.getY() + vector.getZ() * vector.getZ());
 		
@@ -51,7 +49,7 @@ public class MathClass {
 	 * @param vector vector to be normalized
 	 * @return normalized vector
 	 */
-	public final Vector normalize(Vector vector) {
+	public static final Vector normalize(Vector vector) {
 		
 		// The normal of a vector = vector divided by the magnitude of the vector.
 		float magnitude = calcMagnitude(vector);
@@ -72,12 +70,12 @@ public class MathClass {
 	 * @param vec2 vector 2
 	 * @return resultant vector.
 	 */
-	public Vector addVec ( Vector vec1, Vector vec2){
+	public static Vector addVec ( Vector vec1, Vector vec2){
 
 		return new Vector( vec1.getX() + vec2.getX(), vec1.getY() + vec2.getY(), vec1.getZ() + vec2.getZ());
 	}
 
-	public Vector subVec (Vector vec1, Vector vec2){
+	public static Vector subVec (Vector vec1, Vector vec2){
 		return  new Vector( vec1.getX() - vec2.getX(), vec1.getY() - vec2.getY(), vec1.getZ() - vec2.getZ());
 	}
 	
