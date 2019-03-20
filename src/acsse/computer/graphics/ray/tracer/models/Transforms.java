@@ -1,6 +1,6 @@
 package acsse.computer.graphics.ray.tracer.models;
 
-public class Transform {
+public class Transforms {
 
     public static Vector rotateAboutX(float angle, Vector vec){
 
