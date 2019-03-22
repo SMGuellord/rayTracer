@@ -16,7 +16,7 @@ public class Transforms {
 
         float sin = (float)Math.sin(angle);
         float cos = (float)Math.cos(angle);
-        float X = vec.getX()* cos + vec.getY() * sin;
+        float X = vec.getX()* cos + vec.getZ() * (-sin);
         float Z = vec.getX()* (-sin) + vec.getZ() * cos;
 
         return new Vector(X, vec.getY(), Z);

@@ -15,7 +15,7 @@ public class MathClass {
 	 */
 	public static final float dotProd(Vector vec1, Vector vec2) {
 	
-		return vec1.getX() * vec2.getX() + vec1.getY()  * vec2.getY() + vec1.getZ() * vec2.getZ();
+		return vec1.getX() * vec2.getX() + vec1.getY() * vec2.getY() + vec1.getZ() * vec2.getZ();
 		
 	}
 	
