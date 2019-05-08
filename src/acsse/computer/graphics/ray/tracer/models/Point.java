@@ -2,9 +2,9 @@ package acsse.computer.graphics.ray.tracer.models;
 
 public class Point {
 
-    private int x;
-    private int y;
-    private int z;
+    private float x;
+    private float y;
+    private float z;
 
     /**
      * constructor
@@ -12,40 +12,46 @@ public class Point {
      * @param y -- y coordinate
      * @param z -- z coordinate
      */
-    public Point(int x, int y, int z) {
+    public Point(float x, float y, float z) {
         this.x = x;
         this.y = y;
         this.z = z;
     }
 
-    public int getX() {
+    public Point(Point other) {
+    	this.x = other.x;
+        this.y = other.y;
+        this.z = other.z;
+	}
+
+	public float getX() {
         return x;
     }
 
-    public void setX(int x) {
+    public void setX(float x) {
         this.x = x;
     }
 
-    public int getY() {
+    public float getY() {
         return y;
     }
 
-    public void setY(int y) {
+    public void setY(float y) {
         this.y = y;
     }
 
-    public int getZ() {
+    public float getZ() {
         return z;
     }
 
-    public void setZ(int z) {
+    public void setZ(float z) {
         this.z = z;
     }
 
     /**
-     * Calculate the distance between two points.
-     * @param other -- other point
-     * @return return the distance between the two point
+     * Calculate the distance between two pofloats.
+     * @param other -- other pofloat
+     * @return return the distance between the two pofloat
      */
     public float calcDistance(Point other){
         return (float)Math.sqrt((other.x - x)*(other.x -x) + (other.y - y)*(other.y -y) + (other.z - z)*(other.z -z));

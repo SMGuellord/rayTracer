@@ -31,11 +31,11 @@ public class Transforms {
         return new Vector(X, Y, vec.getZ());
     }
 
-    public Vector scale (float scalar, Vector vec){
+    public static Vector scale (float scalar, Vector vec){
         return new Vector(scalar * vec.getX(), scalar * vec.getY(), scalar * vec.getZ() );
     }
 
-    public Vector negateVector ( Vector vector){
+    public static Vector negateVector ( Vector vector){
         return new Vector(scale(-1, vector));
     }
 }

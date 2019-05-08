@@ -32,6 +32,9 @@ public class MathClass {
 							vec1.getX() * vec2.getY() - vec1.getY() * vec2.getX());
 	}
 
+	public static final float squaredSum(Vector vector) {
+		return vector.getX() * vector.getX() + vector.getY() * vector.getY() + vector.getZ() * vector.getZ();
+	}
 	
 	/**
 	 * Calculate the magnitude of a vector
@@ -40,7 +43,7 @@ public class MathClass {
 	 */
 	public static final float calcMagnitude(Vector vector) {
 		
-		return  (float) Math.sqrt(vector.getX() * vector.getX() + vector.getY() * vector.getY() + vector.getZ() * vector.getZ());
+		return  (float) Math.sqrt(squaredSum(vector));
 		
 	}
 	
@@ -70,13 +73,14 @@ public class MathClass {
 	 * @param vec2 vector 2
 	 * @return resultant vector.
 	 */
-	public static Vector addVec ( Vector vec1, Vector vec2){
+	public static Vector add ( Vector vec1, Vector vec2){
 
 		return new Vector( vec1.getX() + vec2.getX(), vec1.getY() + vec2.getY(), vec1.getZ() + vec2.getZ());
 	}
 
-	public static Vector subVec (Vector vec1, Vector vec2){
+	public static Vector sub (Vector vec1, Vector vec2){
 		return  new Vector( vec1.getX() - vec2.getX(), vec1.getY() - vec2.getY(), vec1.getZ() - vec2.getZ());
 	}
+
 	
 }
