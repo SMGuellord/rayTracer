@@ -95,6 +95,6 @@ public class Image {
 		}
 		
 		long end = System.nanoTime();
-		System.out.println("Loop time: "+ (end-starts));
+		System.out.println("Loop time: "+ (end-starts)/1000000000.0f);
 	}
 }

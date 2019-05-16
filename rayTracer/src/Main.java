@@ -30,18 +30,20 @@ public class Main {
 		ShapeList shapes = new ShapeList();
 		
 		int imgWidth = 680;
-		int imgHeight = 520;
+		int imgHeight = 460;
 		
 		Image image = new Image(imgWidth, imgHeight);
 		
 		PerspectiveCamera camera = new PerspectiveCamera (new Vector(-5.0f, 1.0f, 0.0f), new Vector(0.0f, 1.0f, 0.0f),
-				new Vector(), (float) (25.0f *3.14/180.0f), (float)imgWidth/(float)imgHeight);
+				new Vector(), (float) (36.0f *3.14/180.0f), (float)imgWidth/(float)imgHeight);
 		
 		InfinitePlane plane = new InfinitePlane(new Vector(0.0f, 0.0f, 0.0f), new Vector(), new Colour(0.5f, 1.0f, 0.5f));
 		shapes.add(plane);
 		
-		Sphere sphere = new Sphere(new Vector(0.0f, 0.0f, 0.0f), 1.0f, new Colour(1.0f, 0.0f, 0.0f));
+		Sphere sphere = new Sphere(new Vector(0.0f, 1.0f, 0.0f), 1.0f, new Colour(1.0f, 0.0f, 0.0f));
+		//Sphere sphere2 = new Sphere(new Vector(0.0f, 1.0f, 0.0f), 1.0f, new Colour(0.0f, 0.0f, 1.0f));
 		shapes.add(sphere);
+		//shapes.add(sphere2);
 		
 		rayTrace(image, camera, shapes);
 		
