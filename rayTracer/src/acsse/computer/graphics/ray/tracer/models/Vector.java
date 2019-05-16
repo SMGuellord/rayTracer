@@ -11,9 +11,9 @@ public class Vector {
 	 */
 	public Vector () {
 
-		this.x = 0f;
-		this.y = 0f;
-		this.z = 0f;
+		this.x = 0.0f;
+		this.y = 1.0f;
+		this.z = 0.0f;
 	}
 	
 	/**

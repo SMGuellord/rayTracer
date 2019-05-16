@@ -27,7 +27,7 @@ public class Main {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		ShapeList scene = new ShapeList();
+		ShapeList shapes = new ShapeList();
 		
 		int imgWidth = 680;
 		int imgHeight = 520;
@@ -38,16 +38,16 @@ public class Main {
 				new Vector(), (float) (25.0f *3.14/180.0f), (float)imgWidth/(float)imgHeight);
 		
 		InfinitePlane plane = new InfinitePlane(new Vector(0.0f, 0.0f, 0.0f), new Vector(), new Colour(0.5f, 1.0f, 0.5f));
-		scene.add(plane);
+		shapes.add(plane);
 		
-		Sphere sphere = new Sphere(new Vector(0.0f, 0.0f, 0.0f), 60.0f, new Colour(1.0f, 0.0f, 0.0f));
-		scene.add(sphere);
+		Sphere sphere = new Sphere(new Vector(0.0f, 0.0f, 0.0f), 1.0f, new Colour(1.0f, 0.0f, 0.0f));
+		shapes.add(sphere);
 		
-		rayTrace(image, camera, scene);
+		rayTrace(image, camera, shapes);
 		
 	}
 	
-	public static void rayTrace(Image image, Camera camera, Shape scene) {
+	public static void rayTrace(Image image, Camera camera, Shape shapes) {
 		for (int w = 0; w < image.getImgWidth(); w++) {
 			for (int h = 0; h < image.getImgHeight(); h++) {
 				
@@ -55,7 +55,7 @@ public class Main {
 				Vector2D vector2D = new Vector2D((2.0f * w)/image.getImgWidth() - 1.0f, (-2.0f * h)/image.getImgHeight() + 1.0f);
 				Ray ray = new Ray(camera.produceRay(vector2D));
 				Intersection intersection = new Intersection(ray);
-				if(scene.intersect(intersection)) {
+				if(shapes.intersect(intersection)) {
 					image.setPixel(w, h, new Colour(intersection.getColour()));
 				}else {
 					image.setPixel(w, h, new Colour(0.0f));

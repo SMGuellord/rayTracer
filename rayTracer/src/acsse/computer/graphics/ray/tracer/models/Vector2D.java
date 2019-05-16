@@ -9,6 +9,8 @@ package acsse.computer.graphics.ray.tracer.models;
  */
 public class Vector2D {
 	
+	
+
 	private float u;
 	private float v;
 	
@@ -53,5 +55,10 @@ public class Vector2D {
 	public Vector2D (float u, float v) {
 		this.u = u;
 		this.v = v;
+	}
+	
+	@Override
+	public String toString() {
+		return "Vector2D [u=" + u + ", v=" + v + "]";
 	}
 }

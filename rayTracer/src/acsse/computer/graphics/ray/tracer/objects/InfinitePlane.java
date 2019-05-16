@@ -29,7 +29,7 @@ public class InfinitePlane extends Shape{
 		}
 		
 		// Determine the point of intersection
-		float t = MathClass.dotProd(MathClass.sub(pos, intersection.getRay().getpOrigin()), normal)/dirDotNorm;
+		float t = MathClass.dotProd(new Vector(MathClass.sub(pos, intersection.getRay().getpOrigin())), normal)/dirDotNorm;
 		if(t <= Constants.T_MIN || t >= intersection.getT()) {
 			return false; // the intersection is out of the desired range
 		}
@@ -51,7 +51,7 @@ public class InfinitePlane extends Shape{
 		}
 		
 		// Determine the point of intersection
-		float t = MathClass.dotProd(MathClass.sub(pos, ray.getpOrigin()), normal)/ dirDotNorm;
+		float t = MathClass.dotProd(new Vector(MathClass.sub(pos, ray.getpOrigin())), normal)/ dirDotNorm;
 		if(t <= Constants.T_MIN || t >= Constants.T_MAX) {
 			return false; // the intersection is out of the desired range
 		}

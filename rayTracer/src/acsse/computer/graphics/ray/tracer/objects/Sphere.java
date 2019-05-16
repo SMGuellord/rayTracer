@@ -58,14 +58,14 @@ public class Sphere extends Shape{
 	 * @param colour the colour to set
 	 */
 	public void setColour(Colour colour) {
-		this.colour = colour;
+		this.colour = new Colour(colour);
 	}
 
 	@Override
 	public boolean intersect(Intersection intersection) {
 		
 		Ray thisRay = new Ray(intersection.getRay());
-		thisRay.setpOrigin(MathClass.sub(thisRay.getpOrigin(), center));
+		thisRay.setpOrigin(new Vector(MathClass.sub(thisRay.getpOrigin(), center)));
 		
 		// Determine quadratic coefficients
 		
@@ -101,7 +101,7 @@ public class Sphere extends Shape{
 	@Override
 	public boolean doesIntersect(Ray ray) {
 		Ray thisRay = new Ray(ray);
-		thisRay.setpOrigin(MathClass.sub(thisRay.getpOrigin(), center));
+		thisRay.setpOrigin(new Vector(MathClass.sub(thisRay.getpOrigin(), center)));
 		
 		// Determine quadratic coefficients
 		

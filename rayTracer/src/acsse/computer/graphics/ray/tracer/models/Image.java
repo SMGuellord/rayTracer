@@ -81,7 +81,7 @@ public class Image {
 		long starts = System.nanoTime();
 		for (int w = 0; w < imgWidth; w++) {
 			for(int h = 0; h < imgHeight; h++) {
-				Colour thisColour = data[w][h];
+				Colour thisColour = new Colour(this.data[w][h]);
 				thisColour.performGammaCorrection(exposure, gamma);
 				thisColour.clamp(0.0f, 1.0f);
 				buffer.setRGB(w, h, thisColour.toInteger());

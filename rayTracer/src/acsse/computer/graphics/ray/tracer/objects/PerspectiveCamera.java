@@ -25,8 +25,8 @@ public class PerspectiveCamera extends Camera {
 	
 	public PerspectiveCamera(Vector origin, Vector target, Vector upguide, float angle, float aspectRation) {
 		this.origin = new Vector(origin);
-		this.forwardVector = new Vector(MathClass.normalize(MathClass.sub(target, origin)));
-		this.rightVector = new Vector(MathClass.normalize(MathClass.crossProd(forwardVector, upguide)));
+		this.forwardVector = new Vector(MathClass.normalize(new Vector(MathClass.sub(target, origin))));
+		this.rightVector = new Vector(MathClass.normalize(new Vector(MathClass.crossProd(forwardVector, upguide))));
 		this.upVector = new Vector(MathClass.crossProd(rightVector, forwardVector));
 		
 		height = (float) Math.tan(angle);
@@ -34,8 +34,11 @@ public class PerspectiveCamera extends Camera {
 	}
 	
 	final public Ray produceRay(Vector2D point) {
-		Vector dir = new Vector(MathClass.add(forwardVector, MathClass.add(Transforms.scale(point.getU()*width, rightVector), 
-				Transforms.scale(point.getV() * height, upVector))));
+		
+		Vector pRight = new Vector(Transforms.scale(point.getU()*width, rightVector));
+		Vector pUp = new Vector(Transforms.scale(point.getV() * height, upVector));		
+		Vector vecSum = new Vector(MathClass.add(forwardVector, pRight));
+		Vector dir = new Vector(MathClass.add(vecSum, pUp));
 				
 		return new Ray(origin, MathClass.normalize(dir));
 	}
@@ -123,5 +126,13 @@ public class PerspectiveCamera extends Camera {
 	public void setWidth(float width) {
 		this.width = width;
 	}
+
+	@Override
+	public String toString() {
+		return "PerspectiveCamera [origin=" + origin.toString() + ", forwardVector=" + forwardVector.toString() + ","
+				+ " upVector=" + upVector.toString() + ", rightVector=" + rightVector.toString() + ", height=" + height + ", width=" + width + "]";
+	}
+	
+	
 
 }

@@ -77,7 +77,12 @@ public class Ray {
 	
 	final Vector calculate(float t) {
 		
-		return MathClass.add(pOrigin, Transforms.scale(t, dir));
+		return new Vector(MathClass.add(pOrigin, new Vector(Transforms.scale(t, dir))));
+	}
+
+	@Override
+	public String toString() {
+		return "Ray [pOrigin=" + pOrigin.toString() + ", dir=" + dir.toString() + ", tMax=" + tMax + "]";
 	}
 	
 
